@@ -1,0 +1,64 @@
+CampusCare - Forgot Password Email Setup
+======================================
+
+The app sends reset passwords using SMTP (JavaMail). You configure ONE file:
+
+  web/WEB-INF/email.properties
+
+Steps:
+------
+1. In your project folder, open:
+     CampusCare/web/WEB-INF/
+
+2. Copy the example file:
+     email.properties.example  -->  email.properties
+
+3. Edit email.properties with your sender details:
+
+   mail.enabled=true
+   mail.smtp.host=smtp.gmail.com
+   mail.smtp.port=587
+   mail.smtp.starttls=true
+   mail.smtp.username=YOUR_GMAIL@gmail.com
+   mail.smtp.password=YOUR_APP_PASSWORD
+   mail.from=CampusCare <YOUR_GMAIL@gmail.com>
+
+4. Save the file.
+
+5. In NetBeans: Clean and Build, then Run (or redeploy to Tomcat).
+
+Gmail (recommended for college projects)
+----------------------------------------
+- Use a Gmail account you control.
+- Turn on 2-Step Verification in Google Account settings.
+- Create an App Password (NOT your normal Gmail password):
+    Google Account -> Security -> 2-Step Verification -> App passwords
+    App: Mail, Device: Other (CampusCare)
+    Google gives a 16-character password (no spaces).
+- Put that 16-character code in mail.smtp.password=
+
+Note: This project uses SMTP username + app password, not OAuth "token".
+If your college uses Outlook, change host to smtp.office365.com and use
+your college email + app password there.
+
+After deploy, copy email.properties into the deployed folder too:
+  build/web/WEB-INF/email.properties
+(or rebuild so NetBeans copies it).
+
+Test:
+-----
+1. Open Forgot Password page.
+2. Enter a registered student email (not admin).
+3. You should receive an email with the new password.
+
+Troubleshooting:
+----------------
+- "Password reset email is not configured"
+    -> email.properties missing OR mail.enabled=false OR username/from empty
+
+- "Could not send reset email: ..."
+    -> Wrong app password, or Gmail blocked less secure apps (use App Password)
+
+- Admin accounts cannot reset via this page (by design).
+
+Do NOT commit email.properties with real passwords to Git.

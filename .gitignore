@@ -1,0 +1,29 @@
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+
+# Build files
+build/
+dist/
+*.class
+*.war
+
+# Email configuration / credentials
+INF/email.properties
+INF/email.properties.example
+
+# Environment / secret files
+.env
+.env.*
+
+# IDE files
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

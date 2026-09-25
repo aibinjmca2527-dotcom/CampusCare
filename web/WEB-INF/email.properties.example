@@ -1,0 +1,20 @@
+# =============================================================================
+# COPY THIS FILE TO:  email.properties  (same folder: WEB-INF)
+# Then edit the values below. Rebuild and redeploy the project.
+# See EMAIL_SETUP.txt for full Gmail / Outlook instructions.
+# =============================================================================
+
+mail.enabled=true
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=587
+mail.smtp.starttls=true
+
+# Sender Gmail address
+mail.smtp.username=aibinjoseph9605573691@gmail.com
+
+# Gmail App Password (16 characters from Google Account -> App passwords)
+# NOT your normal Gmail login password
+mail.smtp.password=mewpqhcuzwtxiklx
+
+# From header shown in the email
+mail.from=CampusCare <>
