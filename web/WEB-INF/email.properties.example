@@ -1,20 +1,24 @@
 # =============================================================================
-# COPY THIS FILE TO:  email.properties  (same folder: WEB-INF)
-# Then edit the values below. Rebuild and redeploy the project.
-# See EMAIL_SETUP.txt for full Gmail / Outlook instructions.
+# CampusCare – SMTP Email Configuration Template
+# =============================================================================
+# Instructions:
+# 1. Copy this file to 'email.properties' in the same directory (web/WEB-INF/):
+#    cp email.properties.example email.properties
+# 2. Update the credentials below with your SMTP account details.
+# 3. Rebuild and deploy the application.
+# For full setup instructions, see EMAIL_SETUP.txt.
 # =============================================================================
 
-mail.enabled=true
+mail.enabled=false
 mail.smtp.host=smtp.gmail.com
 mail.smtp.port=587
 mail.smtp.starttls=true
 
-# Sender Gmail address
-mail.smtp.username=aibinjoseph9605573691@gmail.com
+# Sender SMTP / Gmail address
+mail.smtp.username=your_email@gmail.com
 
-# Gmail App Password (16 characters from Google Account -> App passwords)
-# NOT your normal Gmail login password
-mail.smtp.password=mewpqhcuzwtxiklx
+# SMTP App Password (e.g. 16-character Google App Password, NOT your personal password)
+mail.smtp.password=your_app_password_here
 
-# From header shown in the email
-mail.from=CampusCare <>
+# From header displayed to recipient
+mail.from=CampusCare <your_email@gmail.com>
